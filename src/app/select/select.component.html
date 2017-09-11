@@ -1,3 +1,13 @@
-<p>
-  select works!
-</p>
+<div class="wrap">
+	<div class="label" *ngFor="let label of moneyLabels">
+		<md-checkbox [(ngModel)]="checkboxes[label]"><span>{{ label }}</span></md-checkbox>	
+	</div>
+
+	<button class="btn send-btn" (click)="send(checkboxes)" md-button>Отправить</button>
+</div>
+
+{{ checkboxes | json }}
+
+
+
+
