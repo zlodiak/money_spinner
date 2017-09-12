@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { SelectComponent } from './select/select.component';
 import { OutputComponent } from './output/output.component';
 import { MoneyService } from './services/money.service';
+import { GlobalVarsService } from './services/global-vars.service';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MoneyService } from './services/money.service';
     AppRoutingModule
   ],
   providers: [
+    GlobalVarsService,
     MoneyService
   ],
   bootstrap: [AppComponent]

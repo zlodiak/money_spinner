@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { MoneyService } from '../services/money.service';
+import { GlobalVarsService } from '../services/global-vars.service';
 
 @Component({
   selector: 'app-select',
@@ -13,14 +14,10 @@ export class SelectComponent implements OnInit {
 	private money: Object = {};
 	private moneyLabels: string[] = [];
 
-  constructor(private moneyService: MoneyService) {  }
+  constructor(private moneyService: MoneyService, private globalVarsService: GlobalVarsService) {  }
 
   ngOnInit() {
   	let moneyObj = this.getMoney();
-
-  	console.log(this.checkboxes);
-
-
   }
 
   private getMoney(): void {
@@ -44,7 +41,26 @@ export class SelectComponent implements OnInit {
   };   
 
   private send(checkboxes): void {
-  	console.log(checkboxes);
-  };
+  	let checkboxesChecked: string[] = [];
+
+		for(var prop in checkboxes) {
+		  if (!checkboxes.hasOwnProperty(prop)) continue;
+		  if(checkboxes[prop] === true) {
+		  	checkboxesChecked.push(prop);
+		  }	  	
+  	};
+
+  	this.globalVarsService.addMoneyBox(checkboxesChecked);
+
+  	this.clearCheckboxes();
+	}
+
+	private clearCheckboxes(): void {
+		for(var prop in this.checkboxes) {
+		  if (!this.checkboxes.hasOwnProperty(prop)) continue;
+		  this.checkboxes[prop] = false;  	
+  	};
+	};
+
 
 }

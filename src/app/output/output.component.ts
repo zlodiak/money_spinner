@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { GlobalVarsService } from '../services/global-vars.service';
+
 @Component({
   selector: 'app-output',
   templateUrl: './output.component.html',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OutputComponent implements OnInit {
 
-  constructor() { }
+	private moneyBox: any[];
+
+  constructor(private globalVarsService: GlobalVarsService) { }
 
   ngOnInit() {
+  	this.getMoneyBox();
   }
+
+  private getMoneyBox(): void {
+  	this.moneyBox = this.globalVarsService.getMoneyBox();
+  };
 
 }

@@ -1,3 +1,7 @@
-<p>
-  output works!
-</p>
+<div class="line" *ngFor="let box of moneyBox; let i = index">
+	<span class="index" [innerHTML]="i + '.'"></span>
+
+	<span class="item" *ngFor="let item of box" [innerHTML]="item"></span>
+</div>
+
+

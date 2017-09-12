@@ -1,0 +1,16 @@
+.line{
+	border: 1px solid #000;
+	margin-bottom: 10px;
+	padding: 10px 5px;
+	overflow: hidden;
+}
+
+	.index{
+		margin-right: 20px;
+		color: red;
+	}
+
+	.item{
+		border: 1px dotted #000;
+		margin: 10px 5px ;
+	}
