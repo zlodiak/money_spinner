@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 export class GlobalVarsService {
 
 	private moneyBox: any[];
+	private isVisibleSpinner: boolean = false;
 
   constructor() { 
   	this.moneyBox = localStorage.moneyBox ? JSON.parse(localStorage.moneyBox) : [];
@@ -17,5 +18,13 @@ export class GlobalVarsService {
   	this.moneyBox.push(arr);
   	localStorage.moneyBox = JSON.stringify(this.moneyBox);
   };  
+
+  getSpinnerState(): boolean {
+  	return this.isVisibleSpinner;
+  }; 
+
+  setSpinnerState(state): void {
+  	this.isVisibleSpinner = state;
+  };    
 
 }

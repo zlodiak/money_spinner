@@ -6,3 +6,8 @@
 
 
 <router-outlet></router-outlet>
+
+<div class="spinner-backdrop" *ngIf="isVisibleSpinner"></div>
+<div class="spinner-area" *ngIf="isVisibleSpinner">
+	<span class="spinner">loading...</span>
+</div>
