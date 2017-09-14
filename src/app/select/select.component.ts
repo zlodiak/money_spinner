@@ -54,12 +54,11 @@ export class SelectComponent implements OnInit {
 
   	this.globalVarsService.addMoneyBox(checkboxesChecked);
     this.globalVarsService.setSpinnerState(true);
-    let this_ = this;
 
-    setTimeout(function() {
-      this_.globalVarsService.setSpinnerState(false);
-      this_.clearCheckboxes();
-    }, 1000);
+    setTimeout(() => {
+      this.globalVarsService.setSpinnerState(false);
+      this.clearCheckboxes();      
+    }, 1000);    
 	}
 
 	private clearCheckboxes(): void {

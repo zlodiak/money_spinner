@@ -16,9 +16,11 @@ export class AppComponent {
 	private isVisibleSpinner: boolean;
   
   constructor(private globalVarsService: GlobalVarsService) {  
-		this.globalVarsService.getSpinnerState().subscribe(data => {
-		  // console.log('subscribe', data);
+		this.globalVarsService.getSpinnerState().subscribe(data => setTimeout(() => {
+		  console.log('subscribe', data);
 		  this.isVisibleSpinner = data;
-		});  	
-  }
+		}, 0));  	
+  };
 }
+
+

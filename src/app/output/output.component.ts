@@ -14,7 +14,12 @@ export class OutputComponent implements OnInit {
   constructor(private globalVarsService: GlobalVarsService) { }
 
   ngOnInit() {
-  	this.getMoneyBox();
+    this.globalVarsService.setSpinnerState(true);
+
+    setTimeout(() => {
+      this.globalVarsService.setSpinnerState(false);
+      this.getMoneyBox();
+    }, 1000);   	
   }
 
   private getMoneyBox(): void {
