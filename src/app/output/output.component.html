@@ -2,6 +2,8 @@
 	<span class="index" [innerHTML]="i + '.'"></span>
 
 	<span class="item" *ngFor="let item of box" [innerHTML]="item"></span>
+
+	<span class="delete" (click)="deleteLine(i)">X</span>
 </div>
 
 

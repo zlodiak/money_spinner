@@ -4,7 +4,8 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {  MdCheckboxModule,
+import {  MdProgressSpinnerModule,
+          MdCheckboxModule,
           MdButtonModule } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +22,7 @@ import { GlobalVarsService } from './services/global-vars.service';
     OutputComponent
   ],
   imports: [
+    MdProgressSpinnerModule,
     FormsModule,
     MdButtonModule,
     BrowserAnimationsModule,
