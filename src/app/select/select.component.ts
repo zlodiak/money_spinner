@@ -50,9 +50,16 @@ export class SelectComponent implements OnInit {
 		  }	  	
   	};
 
-  	this.globalVarsService.addMoneyBox(checkboxesChecked);
+    if(checkboxesChecked.length == 0) { return; }
 
-  	this.clearCheckboxes();
+  	this.globalVarsService.addMoneyBox(checkboxesChecked);
+    this.globalVarsService.setSpinnerState(true);
+    let this_ = this;
+
+    setTimeout(function() {
+      this_.globalVarsService.setSpinnerState(false);
+      this_.clearCheckboxes();
+    }, 1000);
 	}
 
 	private clearCheckboxes(): void {
