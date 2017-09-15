@@ -14,14 +14,9 @@ export class GlobalVarsService {
   	this.moneyBox = localStorage.moneyBox ? JSON.parse(localStorage.moneyBox) : [];
   }
 
-  delMoneyBox(index): any[] {
-    this.moneyBox.splice(index, 1);
-    return this.moneyBox;
-  };
-
   getMoneyBox(): any[] {
-    return this.moneyBox;
-  };  
+  	return this.moneyBox;
+  };
 
   addMoneyBox(arr): void {    
   	this.moneyBox.push(arr);

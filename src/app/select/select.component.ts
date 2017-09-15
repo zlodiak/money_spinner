@@ -58,7 +58,7 @@ export class SelectComponent implements OnInit {
     setTimeout(() => {
       this.globalVarsService.setSpinnerState(false);
       this.clearCheckboxes();      
-    }, 3000);    
+    }, 1000);    
 	}
 
 	private clearCheckboxes(): void {

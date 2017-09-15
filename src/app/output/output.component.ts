@@ -19,21 +19,11 @@ export class OutputComponent implements OnInit {
     setTimeout(() => {
       this.globalVarsService.setSpinnerState(false);
       this.getMoneyBox();
-    }, 3000);   	
+    }, 1000);   	
   }
 
   private getMoneyBox(): void {
   	this.moneyBox = this.globalVarsService.getMoneyBox();
-  };
-
-  private deleteLine(lineNum): void {
-    console.log(lineNum, this.moneyBox);
-
-    /*this.moneyBox.forEach(function(item, i) {
-      if(lineNum == i) {
-        this.globalVarsService.delMoneyBox(lineNum);        
-      }
-    });*/
   };
 
 }

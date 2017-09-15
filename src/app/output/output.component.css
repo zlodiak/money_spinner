@@ -14,9 +14,3 @@
 		border: 1px dotted #000;
 		margin: 10px 5px ;
 	}
-
-	.delete{
-		color: red;
-		float: right;
-		cursor: pointer;
-	}
