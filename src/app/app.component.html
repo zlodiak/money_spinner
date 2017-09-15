@@ -7,8 +7,10 @@
 
 <router-outlet></router-outlet>
 
-<div class="spinner-backdrop" *ngIf="isVisibleSpinner"></div>
-<div class="spinner-area" *ngIf="isVisibleSpinner">
-		<md-spinner></md-spinner>
-    <span class="spinner">loading...</span>
-</div>
+<app-spinner>
+	<div class="spinner-backdrop" *ngIf="isVisibleSpinner"></div>
+	<div class="spinner-area" *ngIf="isVisibleSpinner">
+			<md-spinner></md-spinner>
+	    <span class="spinner">loading...</span>
+	</div>
+</app-spinner>
