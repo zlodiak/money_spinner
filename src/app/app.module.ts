@@ -13,12 +13,14 @@ import { SelectComponent } from './select/select.component';
 import { OutputComponent } from './output/output.component';
 import { MoneyService } from './services/money.service';
 import { GlobalVarsService } from './services/global-vars.service';
+import { TestDirective } from './directives/test.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     SelectComponent,
-    OutputComponent
+    OutputComponent,
+    TestDirective
   ],
   imports: [
     FormsModule,
