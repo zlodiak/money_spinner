@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
 
 import { GlobalVarsService } from './services/global-vars.service';
-import { SpinnerDirective } from './directives/spinner.directive';
+
 
 @Component({
   selector: 'app-root',
