@@ -13,7 +13,7 @@ export class TestDirective implements OnInit {
 
 	ngOnInit() {		
 		console.log(this.backgroudColor);	
-		this.el.nativeElement.style.backgroundColor = this.backgroudColor;
+		this.el.nativeElement.innerHTML = '<H2>BLA</H2>';
 	}  
 
 }
