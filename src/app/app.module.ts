@@ -14,13 +14,16 @@ import { OutputComponent } from './output/output.component';
 import { MoneyService } from './services/money.service';
 import { GlobalVarsService } from './services/global-vars.service';
 import { TestDirective } from './directives/test.directive';
+import { UnlessDirective } from './directives/unless.directive';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SelectComponent,
     OutputComponent,
-    TestDirective
+    TestDirective,
+    UnlessDirective
   ],
   imports: [
     FormsModule,

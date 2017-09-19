@@ -1,4 +1,4 @@
-<h1 *appTest visibility="true">navigation:</h1>
+<div appTest class="directive-attr" bgColor="violet">dir attr</div>
 
 <div class="nav">
   <a [routerLink]="['/select']">select</a>
@@ -8,8 +8,12 @@
 
 <router-outlet></router-outlet>
 
-<div class="spinner-backdrop" *ngIf="isVisibleSpinner"></div>
-<div class="spinner-area" *ngIf="isVisibleSpinner">
-    <span class="spinner">loading...</span>
+<div *myUnless="isVisibleSpinner">
+	<div class="spinner-backdrop"></div>
+	<div class="spinner-area">
+	    <span class="spinner">loading...</span>
+	</div>	
 </div>
+
+
 

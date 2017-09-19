@@ -1,23 +1,19 @@
-import { Directive, Input, OnInit, ViewContainerRef, TemplateRef } from '@angular/core';
+import { Directive, Input, OnInit, ElementRef } from '@angular/core';
 
 @Directive({
   selector: '[appTest]'
 })
 export class TestDirective implements OnInit {
 
-	@Input() visibility: boolean;
+	@Input('bgColor') backgroudColor: string;
 
-  constructor(private viewContainer: ViewContainerRef, private template: TemplateRef<Object>) { 
+  constructor(private el: ElementRef) { 
   	
   }
 
-	ngOnInit() {	
-		console.log(this.visibility);	
-	  if(this.visibility) {
-	  	this.viewContainer.createEmbeddedView(this.template);
-	  } else {
-	  	this.viewContainer.clear();
-	  }
+	ngOnInit() {		
+		console.log(this.backgroudColor);	
+		this.el.nativeElement.style.backgroundColor = this.backgroudColor;
 	}  
 
 }
